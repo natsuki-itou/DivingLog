@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<body>
+  <h1>ダイビングログの詳細</h1>
+
+  <form method="post" action="/create" th:object="${formModel}">
+    <table>
+      <!--             <tr>
+                <th class="col_name">ID</th>
+                <td class="col_data" th:text="*{id}"></td>
+            </tr>
+            <tr>
+                <th class="col_name">ユーザーID</th>
+                <td class="col_data" th:text="*{user_id}"></td>
+            </tr>
+ -->
+      <tr>
+        <th class="col_name">日付</th>
+        <td class="col_data" th:text="*{date}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">場所名</th>
+        <td class="col_data" th:text="*{locate_name}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">ポイント名</th>
+        <td class="col_data" th:text="*{point_name}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">ポイントタイプ</th>
+        <td class="col_data" th:text="*{point_type}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">目的</th>
+        <td class="col_data" th:text="*{purpose}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">ショップ名</th>
+        <td class="col_data" th:text="*{shop_name}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">開始潜水時間</th>
+        <td class="col_data" th:text="*{start_diving_time}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">終了潜水時間</th>
+        <td class="col_data" th:text="*{end_diving_time}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">潜水時間</th>
+        <td class="col_data" th:text="*{diving_time}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">平均水深</th>
+        <td class="col_data" th:text="*{average_water_depth}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">最大水深</th>
+        <td class="col_data" th:text="*{max_water_depth}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">水面温度</th>
+        <td class="col_data" th:text="*{top_water_temperature}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">水底温度</th>
+        <td class="col_data" th:text="*{bottom_water_temperature}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">水中視界</th>
+        <td class="col_data" th:text="*{water_visibility}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">開始タンク圧力</th>
+        <td class="col_data" th:text="*{start_tank_pressure}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">終了タンク圧力</th>
+        <td class="col_data" th:text="*{end_tank_pressure}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">天気</th>
+        <td class="col_data" th:text="*{weather}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">気温</th>
+        <td class="col_data" th:text="*{air_temperature}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">風の強さ</th>
+        <td class="col_data" th:text="*{wind_strength}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">波の高さ</th>
+        <td class="col_data" th:text="*{wave_height}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">スーツの種類</th>
+        <td class="col_data" th:text="*{suit_type}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">スーツの厚さ</th>
+        <td class="col_data" th:text="*{suit_thickness}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">スーツの枚数</th>
+        <td class="col_data" th:text="*{suit_piece}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">重り</th>
+        <td class="col_data" th:text="*{weight}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">タンクの種類</th>
+        <td class="col_data" th:text="*{tank_type}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">ダイブコンピューター使用</th>
+        <td class="col_data" th:text="*{Is_wearing_dive_computer}"></td>
+      </tr>
+    </table>
+  </form>
+  <hr>
+  <form action="/add">
+    <input type="submit" value="新規追加" />
+  </form>
+  <form action="/edit" method="get">
+    <input type="submit" value="編集">
+    <input type="hidden" name="id" th:value="${formModel.id}">
+  </form>
+  <form action="/delete" method="post">
+    <input type="submit" value="削除"> 
+    <input type="hidden" name="id" th:value="${formModel.id}">
+  </form>
+<!--     <form action="/details" method="get">
+    <input type="submit" value="back"> 
+    <input type="hidden" name="id" th:value="${formModel.id} - 1">
+  </form>
+   <form action="/details" method="get">
+    <input type="submit" value="next"> 
+    <input type="hidden" name="id" th:value="${formModel.id} + 1">
+  </form>
+ -->  <form action="/">
+    <input type="submit" value="戻　る" />
+  </form>
+</body>
+</html>
