@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Edit DivingLog</title>
+</head>
+<body>
+  <h1>Edit DivingLog</h1>
+  <form method="post" action="/create" th:object="${formModel}">
+    <input type="hidden" name="id" th:value="*{id}">
+    <table border="1">
+      <!-- <tr>
+    <th class="col_name">ID</th>
+    <td class="col_data">
+      <input type="number" name="id" th:value="*{id}" step="1">
+    </td>
+  </tr>
+  <tr>
+    <th class="col_name">ユーザーID</th>
+    <td class="col_data">
+      <input type="number" name="user_id" th:value="*{user_id}" step="1">
+    </td>
+  </tr>
+   -->
+      <tr>
+        <th class="col_name">日付</th>
+        <td class="col_data"><input type="date" name="date"
+          th:value="*{date}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">場所名</th>
+        <td class="col_data"><input type="text" name="locate_name"
+          th:value="*{locate_name}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">ポイント名</th>
+        <td class="col_data"><input type="text" name="point_name"
+          th:value="*{point_name}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">ポイントタイプ</th>
+        <td class="col_data"><select id="point_type" name="point_type"
+          th:value="*{point_type}">
+            <option value="ビーチ">ビーチ</option>
+            <option value="ボート">ボート</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="col_name">目的</th>
+        <td class="col_data"><select id="purpose" name="purpose"
+          th:value="*{purpose}">
+            <option value="watch">watch</option>
+            <option value="photo">photo</option>
+            <option value="training">training</option>
+            <option value="other">other</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="col_name">ショップ名</th>
+        <td class="col_data"><input type="text" name="shop_name"
+          th:value="*{shop_name}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">開始潜水時間</th>
+        <td class="col_data"><input type="time"
+          name="start_diving_time" th:value="*{start_diving_time}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">終了潜水時間</th>
+        <td class="col_data"><input type="time" name="end_diving_time"
+          th:value="*{end_diving_time}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">潜水時間</th>
+        <td class="col_data"><input type="number" name="diving_time"
+          th:value="*{diving_time}" step="1"></td>
+      </tr>
+      <tr>
+        <th class="col_name">平均水深</th>
+        <td class="col_data"><input type="text"
+          name="average_water_depth" th:value="*{average_water_depth}">
+        </td>
+      </tr>
+      <tr>
+        <th class="col_name">最大水深</th>
+        <td class="col_data"><input type="text" name="max_water_depth"
+          th:value="*{max_water_depth}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">水面温度</th>
+        <td class="col_data"><input type="text"
+          name="top_water_temperature" th:value="*{top_water_temperature}">
+        </td>
+      </tr>
+      <tr>
+        <th class="col_name">水底温度</th>
+        <td class="col_data"><input type="text"
+          name="bottom_water_temperature"
+          th:value="*{bottom_water_temperature}"></td>
+      </tr>
+      <tr>
+        <th class="col_name">水中視界</th>
+        <td class="col_data"><input type="number"
+          name="water_visibility" th:value="*{water_visibility}" step="1">
+        </td>
+      </tr>
+      <tr>
+        <th class="col_name">開始タンク圧力</th>
+        <td class="col_data"><input type="number"
+          name="start_tank_pressure" th:value="*{start_tank_pressure}"
+          step="1"></td>
+      </tr>
+      <tr>
+        <th class="col_name">終了タンク圧力</th>
+        <td class="col_data"><input type="number"
+          name="end_tank_pressure" th:value="*{end_tank_pressure}" step="1">
+        </td>
+      </tr>
+      <tr>
+        <th class="col_name">天気</th>
+        <td class="col_data"><select id="weather" name="weather"
+          th:value="*{weather}">
+            <option value="晴れ">晴れ</option>
+            <option value="曇り">曇り</option>
+            <option value="雨">雨</option>
+            <option value="雪">雪</option>
+            <option value="夜">夜</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="col_name">気温</th>
+        <td class="col_data"><input type="number"
+          name="air_temperature" th:value="*{air_temperature}" step="1">
+        </td>
+      </tr>
+      <tr>
+        <th class="col_name">風の強さ</th>
+        <td class="col_data"><select id="wind_strength"
+          name="wind_strength" th:value="*{wind_strength}">
+            <option value="なし">なし</option>
+            <option value="弱">弱</option>
+            <option value="中">中</option>
+            <option value="強">強</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="col_name">波の高さ</th>
+        <td class="col_data"><select id="wave_height"
+          name="wave_height" th:value="*{wave_height}">
+            <option value="なし">なし</option>
+            <option value="低">低</option>
+            <option value="中">中</option>
+            <option value="強">強</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="col_name">スーツの種類</th>
+        <td class="col_data"><select id="suit_type" name="suit_type"
+          th:value="*{suit_type}">
+            <option value="ウエット">ウエット</option>
+            <option value="ドライ">ドライ</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="col_name">スーツの厚さ</th>
+        <td class="col_data"><input type="number" name="suit_thickness"
+          th:value="*{suit_thickness}" step="1"></td>
+      </tr>
+      <tr>
+        <th class="col_name">スーツの枚数</th>
+        <td class="col_data"><input type="number" name="suit_piece"
+          th:value="*{suit_piece}" step="1"></td>
+      </tr>
+      <tr>
+        <th class="col_name">重り</th>
+        <td class="col_data"><input type="number" name="weight"
+          th:value="*{weight}" step="1"></td>
+      </tr>
+      <tr>
+        <th class="col_name">タンクの種類</th>
+        <td class="col_data"><select id="tank_type" name="tank_type"
+          th:value="*{tank_type}">
+            <option value="アルミ">アルミ</option>
+            <option value="スチール">スチール</option>
+            <option value="ナイトロックス">ナイトロックス</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th class="col_name">ダイブコンピューター使用</th>
+        <td class="col_data"><input type="checkbox"
+          name="Is_wearing_dive_computer"
+          th:checked="*{Is_wearing_dive_computer}"></td>
+      </tr>
+    </table>
+    <hr>
+    <input type="submit" value="登　録" />
+  </form>
+  <form action="/">
+    <input type="submit" value="戻　る" />
+  </form>
+</body>
+</html>
